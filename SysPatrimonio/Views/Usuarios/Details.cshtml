@@ -1,0 +1,48 @@
+﻿@model SysPatrimonio.Models.DbUsuario
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="row justify-content-center">
+    <div class="col-6">
+        <div class="card">
+            <div class="card-header">Detalhes do Usuário @Html.DisplayFor(model => model.nome)</div>
+
+            <div class="card-body">
+                <table class="table table-hover">
+                    <colgroup>
+                        <col class="col-4"/>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th>Nome</th>
+                            <td> @Html.DisplayFor(model => model.nome)</td>
+                        </tr>
+                        <tr>
+                            <th>Login</th>
+                            <td> @Html.DisplayFor(model => model.login)</td>
+                        </tr>
+                        <tr>
+                            <th>Senha</th>
+                            <td> @Html.DisplayFor(model => model.senha)</td>
+                        </tr>
+                        <tr>
+                            <th>Status</th>
+                            <td> @Html.DisplayFor(model => model.status)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer ">
+                <form asp-action="Delete" class="text-end">
+                    <input type="hidden" asp-for="id" />
+                    <a asp-action="Index" class="btn btn-warning" >Voltar</a>
+                    <a asp-action="Edit" asp-route-id="@Model?.id" class="btn btn-primary">Editar</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+      
+
